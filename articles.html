@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>المقالات - مدونة INTJ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">مدونة INTJ</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من أنا</a></li>
+                <li><a href="articles.html">المقالات</a></li>
+                <li><a href="contact.html">تواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="articles">
+            <h1>المقالات</h1>
+            <div class="article-list">
+                <article class="article-card">
+                    <h3>عنوان المقال 1</h3>
+                    <p>لمحة مختصرة عن محتوى المقال الأول. يمكن هنا أن نضع فقرة تمهيدية مشوقة للقارئ.</p>
+                    <a href="#">قراءة المزيد</a>
+                </article>
+                <article class="article-card">
+                    <h3>عنوان المقال 2</h3>
+                    <p>وصف بسيط للمقال الثاني لتعريف الزائر بالموضوع بشكل موجز.</p>
+                    <a href="#">قراءة المزيد</a>
+                </article>
+                <article class="article-card">
+                    <h3>عنوان المقال 3</h3>
+                    <p>مقدمة سريعة للمقال الثالث مع إشارة للأفكار الرئيسية التي ستتناولها.</p>
+                    <a href="#">قراءة المزيد</a>
+                </article>
+                <!-- يمكن إضافة المزيد من البطاقات (المقالات) بنفس الشكل -->
+            </div>
+        </section>
+    <script type="module">
+  import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+
+  const container = document.querySelector(".article-list");
+
+  async function loadArticles() {
+    container.innerHTML = "<p>جارٍ تحميل المقالات...</p>";
+    const querySnapshot = await getDocs(collection(window.db, "articles"));
+
+    container.innerHTML = "";
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      container.innerHTML += `
+        <article class="article-card">
+          <h3>${data.title}</h3>
+          <p>${data.summary}</p>
+          <a href="#">اقرأ المزيد</a>
+        </article>
+      `;
+    });
+  }
+
+  loadArticles();
+</script>
+    </main>
+    <footer>
+        <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
