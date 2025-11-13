@@ -21,25 +21,17 @@
     <main>
         <section class="articles">
             <h1>المقالات</h1>
-            <div class="article-list">
-                <article class="article-card">
-                    <h3>عنوان المقال 1</h3>
-                    <p>لمحة مختصرة عن محتوى المقال الأول. يمكن هنا أن نضع فقرة تمهيدية مشوقة للقارئ.</p>
-                    <a href="#">قراءة المزيد</a>
-                </article>
-                <article class="article-card">
-                    <h3>عنوان المقال 2</h3>
-                    <p>وصف بسيط للمقال الثاني لتعريف الزائر بالموضوع بشكل موجز.</p>
-                    <a href="#">قراءة المزيد</a>
-                </article>
-                <article class="article-card">
-                    <h3>عنوان المقال 3</h3>
-                    <p>مقدمة سريعة للمقال الثالث مع إشارة للأفكار الرئيسية التي ستتناولها.</p>
-                    <a href="#">قراءة المزيد</a>
-                </article>
+            <div class="article-list" id="articles-container">
+    <p>جارٍ تحميل المقالات..
                 <!-- يمكن إضافة المزيد من البطاقات (المقالات) بنفس الشكل -->
             </div>
         </section>
+</script>
+    </main>
+    <footer>
+        <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
+    </footer>
+    
     <script type="module">
   import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 
@@ -63,10 +55,5 @@
   }
 
   loadArticles();
-</script>
-    </main>
-    <footer>
-        <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
-    </footer>
 </body>
 </html>
