@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
-    const imageUrl = document.getElementById('imageUrl').value;
+    const summary = document.getElementById('summary').value;
     await addDoc(collection(db, 'articles'), {
       title,
       content,
-      imageUrl,
+      summary,
       createdAt: serverFieldValue('serverTimestamp')
     });
     alert('تم نشر المقال!');
