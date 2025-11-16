@@ -1,7 +1,4 @@
 // admin.js
-import { db } from "firebase-config.js";
-import { collection, addDoc, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-     
 document.addEventListener('DOMContentLoaded', () => {
   const db = window.db;
   const ADMIN_PASSWORD = 'Abubakr#.7'; // يمكنك تخزينه في Firestore أو Environment Variable
