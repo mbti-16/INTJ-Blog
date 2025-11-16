@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة التحكم</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
+    // نفس تهيئة Firebase الموجودة في الأعلى
+  </script>
+</head>
+<body>
+  <header><h1>لوحة التحكم</h1></header>
+
+  <section id="login-section">
+    <h2>تسجيل الدخول</h2>
+    <input type="password" id="admin-pass" placeholder="كلمة المرور">
+    <button id="login-btn">دخول</button>
+  </section>
+
+  <section id="dashboard" style="display:none;">
+    <h2>إضافة مقال جديد</h2>
+    <form id="article-form">
+      <input type="text" id="title" placeholder="عنوان المقال" required>
+      <textarea id="content" placeholder="محتوى المقال" rows="6" required></textarea>
+      <input type="url" id="imageUrl" placeholder="رابط الصورة">
+      <button type="submit">نشر</button>
+    </form>
+
+    <h2>الرسائل الواردة</h2>
+    <ul id="messages-list"></ul>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>

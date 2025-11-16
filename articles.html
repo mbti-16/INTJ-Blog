@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المقالات - مدونة INTJ</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
+    // تهيئة Firebase (نفس الشيفرة الموجودة في index.html)
+    import { db } from "firebase-config.js";
+     import { collection, addDoc, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBZP0XStNIOu_0tjFdfuZlGUj2m7YULisk",
+      authDomain: "intj-82022.firebaseapp.com",
+      databaseURL: "https://intj-82022-default-rtdb.firebaseio.com",
+      projectId: "intj-82022",
+      storageBucket: "intj-82022.firebasestorage.app",
+      messagingSenderId: "691182097473",
+      appId: "1:691182097473:web:ecf2e771cf4d47e7df22c0",
+      measurementId: "G-HY99GS4FJV"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.db = db;
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">مدونة INTJ</div>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">من أنا</a></li>
+        <li><a href="articles.html">المقالات</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="articles">
+      <h1>المقالات</h1>
+      <div class="article-list">
+        <!-- سيتم ملء هذه القائمة ديناميكيًا من Firestore -->
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
+  </footer>
+</body>
+</html>
