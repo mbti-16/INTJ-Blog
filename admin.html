@@ -28,27 +28,64 @@
   </script>
 </head>
 <body>
-  <header><h1>لوحة التحكم</h1></header>
+  <header>
+      <nav class="navbar">
+            <div class="logo">لوحة التحكم</div>
+            <ul class="nav-links">
+                <li><a href="index.html">العودة للمدونة</a></li>
+                <li id="logout-btn" style="cursor:pointer; color:red;">تسجيل الخروج</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section id="admin-login" class="contact">
+            <h1>تسجيل الدخول للمسؤول</h1>
+            <form id="login-form" class="contact-form">
+                <p style="color:red; text-align:center;">تحذير !! قد يتسبب التسجيل الخاطأ الى دخول فايروس لجهازك</p>
+                <label for="login-email">البريد الإلكتروني:</label>
+                <input type="email" id="login-email" name="email" required>
 
-  <section id="login-section">
-    <h2>تسجيل الدخول</h2>
-    <input type="password" id="admin-pass" placeholder="كلمة المرور">
-    <button id="login-btn">دخول</button>
-  </section>
+                <label for="login-password">كلمة المرور:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </section>
 
-  <section id="dashboard" style="display:none;">
-    <h2>إضافة مقال جديد</h2>
-    <form id="article-form">
-      <input type="text" id="title" placeholder="عنوان المقال" required>
-      <textarea id="content" placeholder="محتوى المقال" rows="6" required></textarea>
-      <input type="summary" id="title" placeholder="الملخص" required>
-      <button type="submit">نشر</button>
-    </form>
-
-    <h2>الرسائل الواردة</h2>
-    <ul id="messages-list"></ul>
-  </section>
-
-  <script src="admin.js"></script>
+        <div id="admin-dashboard" style="display:none; padding: 40px 20px;">
+            
+            <h1 style="text-align: center;">لوحة تحكم المسؤول</h1>
+            
+            <hr>
+            
+            <section class="add-article">
+                <h2>➕ إضافة مقال جديد</h2>
+                <form id="add-article-form" class="contact-form" style="max-width: 800px;">
+                    <label for="article-title">عنوان المقال:</label>
+                    <input type="text" id="article-title" required>
+                    
+                    <label for="article-summary">ملخص المقال (سيعرض في صفحة المقالات):</label>
+                    <textarea id="article-summary" rows="3" required></textarea>
+                    
+                    <label for="article-content">محتوى المقال:</label>
+                    <textarea id="article-content" rows="10" required></textarea>
+                    
+                    <button type="submit">نشر المقال</button>
+                </form>
+            </section>
+            
+            <hr>
+            
+            <section class="messages">
+                <h2>✉️ رسائل التواصل المستلمة</h2>
+                <ul id="messages-list" style="list-style: none; padding: 0;">
+                    <li>جارٍ تحميل الرسائل...</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
+    </footer>
 </body>
 </html>
