@@ -4,25 +4,6 @@
   <meta charset="UTF-8">
   <title>لوحة التحكم</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js'
-
-  const supabaseUrl = "https://jydidgltemleeubnyihq.supabase.co";
-  const supabaseKey = "sb_secret_C3SOpEXmfyueo2vgP1Gi8Q_ApfnT6fx";
-  const supabase = createClient(supabaseUrl, supabaseKey);
-
-  // مثال: جلب المقالات
-  async function loadArticles() {
-    const { data, error } = await supabase
-      .from("articles")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    console.log(data);
-  }
-
-  loadArticles();
-  </script>
 </head>
 <body>
   <header>
@@ -84,5 +65,6 @@
     <footer>
         <p>&copy; 2025 مدونة INTJ. جميع الحقوق محفوظة.</p>
     </footer>
+<script src="admin.js"></script>
 </body>
 </html>
