@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
-      const created_at = document.getElementById('created_at').value;
 
 
       const { data, error } = await supabase
@@ -113,11 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         ]);
 
-      if (error) {
+        alert('تم إرسال رسالتك! شكراً لتواصلك معنا.');{
+      } else {
+        if (error) {
         console.error("خطأ في إرسال الرسالة:", error);
         alert('حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
-      } else {
-        alert('تم إرسال رسالتك! شكراً لتواصلك معنا.');
         contactForm.reset();
       }
     });
