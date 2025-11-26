@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
+      const created_at = document.getElementById('created_at').value;
+
 
       const { data, error } = await supabase
         .from('messages') // يفترض وجود جدول 'messages'
