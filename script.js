@@ -112,11 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         ]);
 
-        alert('تم إرسال رسالتك! شكراً لتواصلك معنا.');{
-      } else {
         if (error) {
         console.error("خطأ في إرسال الرسالة:", error);
         alert('حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
+      } else {
+        alert('تم إرسال رسالتك! شكراً لتواصلك معنا.');
         contactForm.reset();
       }
     });
